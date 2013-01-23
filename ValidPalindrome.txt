@@ -21,6 +21,7 @@ public class Solution {
         int start = 0, end = s.length()-1, d = 'A'-'a';
         while(start<end){
             char left = s.charAt(start), right = s.charAt(end);
+	    // alphanumeric characters
             while(!((left>='a' && left<='z') || (left>='A'&& left<='Z') || (left>='0' && left<='9'))){
                 start++;    
                 if(start == s.length())
@@ -30,6 +31,7 @@ public class Solution {
             if(left>='A' && left<='Z')
                 left = (char)(left - d);
             
+	    // alphanumeric characters
             while(!((right>='a' && right<='z') || (right>='A'&& right<='Z') || (right>='0' && right<='9'))){
                 end--;
                 if(end == -1)
@@ -42,8 +44,6 @@ public class Solution {
             
             if(left != right)
                 return false;
-            if(start >= end)
-                return true;                
             start++;
             end--;
         }       
